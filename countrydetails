@@ -1,0 +1,18 @@
+pip install countryinfo
+from countryinfo import CountryInfo
+
+def get_country_info(country_name):
+    try:
+        country = CountryInfo(country_name)
+        print("Country: ", country_name)
+        print("Capital: ", country.capital())
+        print("Currencies: ", ", ".join(country.currencies()))
+        print("Languages: ", ", ".join(country.languages()))
+        print("Borders: ", ", ".join(country.borders()))
+        print("Other names: ", ", ".join(country.alt_spellings()))
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    country_name = input("Enter the name of the country: ")
+    get_country_info(country_name)
